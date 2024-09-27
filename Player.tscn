@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://w3p4m0kv6x8t"]
+[gd_scene load_steps=12 format=3 uid="uid://w3p4m0kv6x8t"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tfbop"]
 [ext_resource type="Texture2D" uid="uid://0vtdiwdqqxrl" path="res://Assets/Idle_sprite_sheet_template.png" id="2_qjj3a"]
@@ -10,6 +10,30 @@ region = Rect2(0, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hd0d"]
 atlas = ExtResource("2_qjj3a")
 region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gykn4"]
+atlas = ExtResource("2_qjj3a")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sep6"]
+atlas = ExtResource("2_qjj3a")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5i4s"]
+atlas = ExtResource("2_qjj3a")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtr1v"]
+atlas = ExtResource("2_qjj3a")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp7y2"]
+atlas = ExtResource("2_qjj3a")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc1qf"]
+atlas = ExtResource("2_qjj3a")
+region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jl8p5"]
 animations = [{
@@ -23,6 +47,39 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gykn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sep6")
+}],
+"loop": true,
+"name": &"Idle back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5i4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtr1v")
+}],
+"loop": true,
+"name": &"Idle left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp7y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc1qf")
+}],
+"loop": true,
+"name": &"Idle right",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -32,5 +89,6 @@ script = ExtResource("1_tfbop")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jl8p5")
-animation = &"Idle"
-frame_progress = 0.970145
+animation = &"Idle back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
