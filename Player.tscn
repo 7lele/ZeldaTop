@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://w3p4m0kv6x8t"]
+[gd_scene load_steps=3 format=3 uid="uid://w3p4m0kv6x8t"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tfbop"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jl8p5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tfbop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jl8p5")
+animation = &"Idle"
