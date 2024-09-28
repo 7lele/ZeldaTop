@@ -16,15 +16,19 @@ func _process(delta: float) -> void:
 	var playerInput = get_input()
 	if input.x > 0 :
 		last = "Idle right"
+		animp.play("walk right")
 	if input.x < 0 :
 		last = "Idle left"
+		animp.play("walk left")
 	if input.y > 0 :
 		last = "Idle"
+		animp.play("walk down")
 	if input.y < 0 :
 		last = "Idle back"
+		animp.play("walk up")
 	
-	
-	animp.play(last)
+	if input == Vector2.ZERO:
+		animp.play(last)
 	velocity = lerp(velocity, playerInput * speed, delta * ACCEL)
 	
 	move_and_slide()
