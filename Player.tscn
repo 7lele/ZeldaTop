@@ -89,6 +89,6 @@ script = ExtResource("1_tfbop")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jl8p5")
-animation = &"Idle back"
+animation = &"Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var last = "down"
 var speed  = 100 
 const ACCEL = 100
 var input: Vector2
@@ -14,7 +14,10 @@ func get_input():
 
 func _process(delta: float) -> void:
 	var playerInput = get_input()
-	
+	if velocity.x > 0 :
+		last = "right"
+	if velocity.x < 0 :
+		last = "left"
 	
 	velocity = lerp(velocity, playerInput * speed, delta * ACCEL)
 	
