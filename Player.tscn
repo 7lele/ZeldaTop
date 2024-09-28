@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://w3p4m0kv6x8t"]
+[gd_scene load_steps=14 format=3 uid="uid://w3p4m0kv6x8t"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tfbop"]
 [ext_resource type="Texture2D" uid="uid://0vtdiwdqqxrl" path="res://Assets/Idle_sprite_sheet_template.png" id="2_qjj3a"]
@@ -82,13 +82,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_2cb14"]
+resource_name = "up"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqovg"]
+_data = {
+"up": SubResource("Animation_2cb14")
+}
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tfbop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animp" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jl8p5")
 animation = &"Idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jqovg")
+}
