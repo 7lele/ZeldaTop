@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var last = "down"
+var last = "Idle"
 var speed  = 100 
 const ACCEL = 100
 var input: Vector2
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	if input.y > 0 :
 		last = "Idle"
 	if input.y < 0 :
-		last = "Idle Back"
+		last = "Idle back"
 	
 	
 	animp.play(last)
